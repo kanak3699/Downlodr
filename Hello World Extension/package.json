@@ -1,0 +1,20 @@
+{
+  "name": "csci3130-project",
+  "version": "1.0.0",
+  "description": "Chrome extension ",
+  "main": "popup.js",
+  "scripts": {
+    "build": "browserify popup.js -o bundle.js"
+  },
+  "author": "group 4",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^17.0.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs": "0.0.1-security",
+    "youtube-dl-exec": "^1.2.3",
+    "ytdl-core": "^4.8.2"
+  }
+}
