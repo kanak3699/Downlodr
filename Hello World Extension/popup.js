@@ -13,5 +13,6 @@ function myFunction() {
   youtubeSkipDashManifest: true,
   referer: 'https://www.youtube.com/watch?v=wHZCYi1K664&t=1352s'
 })
-  .then()
+  .then(output => console.log(output))
+  
 }
