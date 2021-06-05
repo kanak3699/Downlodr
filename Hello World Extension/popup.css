@@ -1,4 +1,15 @@
-h1 {
-    background : red;
-    color: seashell;
+body * {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1e1e1e;
+    text-align: center;
+}
+
+input[type="button"], input[type="submit"] { 
+    color:#0c4271; 
+    font-family: 'Times New Roman', Times, serif;
+    border:1px solid; 
+    border-radius: 5px; 
+    text-align: center;
+    padding: 5%;
 }
