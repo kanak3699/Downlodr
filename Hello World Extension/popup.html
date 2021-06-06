@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +9,8 @@
 
 <body>
     <img src="128.png" alt="Logo">
-    <hr>
-    <form action="popup.js">
-        <label for="video"> Download Format:</label>
+     
+       <label for="video"> Download Format:</label>
         <select name="video" id="video">
             <optgroup label="Video Format">
                 <option value="avi">.avi</option>
@@ -29,9 +27,16 @@
 
         </select>
         <br><br>
-        <input type="submit" value="Download">
-    </form>
+        <button id="collect">collect videos</button>
+        <br>
+        <p id="textCollect"></p>
+        <br>
+        <input id="download" type="submit" value="Download">
+   
+    <div id="video_div"></div>
     <script src="popup.js"></script>
+    <script src="background.js"></script>
+    <script src="jquery-3.4.1.min.js"></script>
 </body>
 
 </html>

@@ -2,7 +2,7 @@ body * {
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
     color: #1e1e1e;
-    text-align: center;
+    text-align: left;
 }
 
 input[type="button"], input[type="submit"] { 

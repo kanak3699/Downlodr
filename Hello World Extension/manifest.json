@@ -14,6 +14,11 @@
     "permissions": [
         "downloads",
         "activeTab",
+        "storage",
         "declarativeContent"
-    ]
+    ],
+    "background" : {
+        "scripts":["background.js","jquery-3.4.1.min.js"],
+        "persistent":false
+    }
 }
