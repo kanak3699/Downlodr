@@ -9,14 +9,9 @@ app.listen('4000', function(){
 app.get('/download', function(req, res) {
 	var link = req.query.url;
 	var format = req.query.format;
-	var quality = req.query.quality;
-	console.log(link);
-	console.log(format);
-	console.log(quality);
 
 	video = ytdl(link,{
 		format:format,
-		quality:quality,
 	});
 	video.pipe(res);
 });

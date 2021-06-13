@@ -1,24 +1,45 @@
 window.onload = function() {
 	let collectButton = document.getElementById('collect');
 	collectButton.onclick = function() {
+		let format = document.getElementById('format');
+		let downloadButton = document.getElementById('download');
+        let fname = document.getElementById('fname');
+
 		chrome.tabs.executeScript({code : scriptCodeCollect});
 		let textCollect = document.getElementById('textCollect');
 		chrome.storage.local.get('savedVideos', function(result) {
-            //textCollect.innerHTML = "collected "+ result.savedImages.length + " videos" +"<br>";
-            var i;
-            var text="";
-            for(i=0;i<result.savedVideos.length;i++){
+            let text="";
+            for(let i=0;i<result.savedVideos.length;i++){
                 text += i+1 +"."+result.savedVideos[i]+"<br>";
             }
             textCollect.innerHTML = text;
 		});
-	};
-
-	let downloadButton = document.getElementById('download');
-	downloadButton.onclick = function() {
-		downloadButton.innerHTML = "Downloaded ";
-		chrome.tabs.executeScript({code : scriptCodeDownload});
-	};		
+		
+	    downloadButton.onclick = function() {
+			chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
+				let url = tabs[0].url;
+				if(url.includes("youtube.com")) {
+					let message  = {
+						'url' : url,
+						'format': format.value,
+						"fname": fname.value
+					};
+					chrome.runtime.sendMessage(message);
+				}
+				else {
+					chrome.storage.local.get('savedVideos', function(result) {
+						let message = {
+							'savedVideos' : result.savedVideos,
+							'format': format.value
+						};
+						chrome.runtime.sendMessage(message, function(){
+							console.log("sending success");
+						});
+					});
+				}
+			});
+	    };	
+	};	
 };
 const scriptCodeCollect =
   `(function() {
@@ -37,14 +58,3 @@ const scriptCodeCollect =
 			});
     })();`;
 
-const scriptCodeDownload =
-  `(function() {
-		chrome.storage.local.get('savedVideos', function(result) {
-			let message = {
-				"savedVideos" : result.savedVideos
-			};
-			chrome.runtime.sendMessage(message, function(){
-				console.log("sending success");
-			});
-		});
-    })();`;

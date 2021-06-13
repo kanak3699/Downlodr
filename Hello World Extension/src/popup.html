@@ -8,30 +8,26 @@
 </head>
 
 <body>
-    <img src="128.png" alt="Logo">
+    <img src="128.png" alt="Logo"><br>
      
-       <label for="video"> Download Format:</label>
-        <select name="video" id="video">
-            <optgroup label="Video Format">
-                <option value="avi">.avi</option>
-                <option value="flv">.flv</option>
-                <option value="mov">.mov</option>
-                <option value="mp4">.mp4</option>
-                <option value="wmv">.wmv</option>
-            </optgroup>
-
-            <optgroup label="Audio Format">
-                <option value="mp3">.mp3</option>
-                <option value="wav">.wav</option>
-            </optgroup>
-
-        </select>
-        <br><br>
-        <button id="collect">collect videos</button>
-        <br>
-        <p id="textCollect"></p>
-        <br>
-        <input id="download" type="submit" value="Download">
+    <label for="video"> Download Format:</label>
+    <select id="format">
+      <option value="mp4">mp4</option>
+      <option value="wmv">wmv</option>
+      <option value="flv">flv</option>
+      <option value="avi">avi</option>
+      <option value="mp3">mp3</option>
+      <option value="mpg">mpg</option>
+    </select>
+    <br><br>
+    <button id="collect">collect videos</button>
+    <br>
+    <p id="textCollect"></p>
+    <br>
+    <label for="fname">File Name:</label>
+    <input type="text" id="fname" name="fname"><br>
+    <br>
+    <input id="download" type="submit" value="Download">
    
     <div id="video_div"></div>
     <script src="popup.js"></script>
