@@ -1,11 +1,11 @@
 body * {
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;
-    color: #1e1e1e;
+    color: #0c4271;
     text-align: left;
 }
 
-input[type="button"], input[type="submit"] { 
+input[type="text"], input[type="submit"], button { 
     color:#0c4271; 
     font-family: 'Times New Roman', Times, serif;
     border:1px solid; 
@@ -13,3 +13,5 @@ input[type="button"], input[type="submit"] {
     text-align: center;
     padding: 2%;
 }
+
+
