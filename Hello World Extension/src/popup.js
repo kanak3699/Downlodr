@@ -2,11 +2,11 @@
 window.onload = function() {
 	let collectButton = document.getElementById('collect');
 	const YOUTUBE = "youtube.com";
+	const CONFIRM_MESSAGE = "Default file name is 'downloadedVideo'. Do you want to continue?";
+	
 	// Event after Collect Button
 	collectButton.onclick = function() {
-		let format = document.getElementById('format').value;
 		let downloadButton = document.getElementById('download');
-        		let fname = document.getElementById('fname').value;
 		let textCollect = document.getElementById('textCollect');
         
 		// Collect videos on a web page
@@ -16,47 +16,54 @@ window.onload = function() {
 		chrome.storage.local.get('savedVideos', function(result) {
             let text="";
             for(let i=0;i<result.savedVideos.length;i++){
-                text += i+1 +"."+result.savedVideos[i]+"<br>";
+                text += i+1 + "." + result.savedVideos[i] + "<br>";
             }
             textCollect.innerHTML = text;
 		});
 		
-	// Download 
-	downloadButton.onclick = function() {
+	    // Download 
+	    downloadButton.onclick = function() {
 			chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
 				let url = tabs[0].url;
-	//if there is a user input for file name, then the file will be name as it is. Otherwise, it will be named "downloadedVideo"
-	let fname = document.getElementById('fname').value;
-	let message  = {
-		'format': format,
-		'fname': fname
-	};
+				let format = document.getElementById('format').value;
+                let fname = document.getElementById('fname').value;
+
+	            //if there is a user input for file name, then the file will be name as it is. Otherwise, it will be named "downloadedVideo"
                 if(fname == null || fname == "") {
-		message  = {
-		'format': format,
-		'fname': "downloadedVideo"
-		};
-	}
-	// Downloader for Youtube
-	if(url.includes(YOUTUBE)) {
-		message.url = url;
-		chrome.runtime.sendMessage(message);
-	}
-	// Downloader for other websites
-	else {
-		chrome.storage.local.get('savedVideos', function(result) {
-		message.savedVideos = result.savedVideos;
-		chrome.runtime.sendMessage(message);
-			});
-		}
-	});
+			        // Send confirm message
+					if(confirm(CONFIRM_MESSAGE)) {
+						fname = "downloadedVideo";
+					}
+		            else {
+						return;
+					}
+	            }
+
+		        let message  = {
+		            'format': format,
+		            'fname': fname
+	            };
+
+	            // Downloader for Youtube
+	            if(url.includes(YOUTUBE)) {
+		            message.url = url;
+		            chrome.runtime.sendMessage(message);
+	            }
+	            // Downloader for other websites
+	            else {
+		            chrome.storage.local.get('savedVideos', function(result) {
+		                message.savedVideos = result.savedVideos;
+		                chrome.runtime.sendMessage(message);
+			        });
+		        }
+	        });
 	    };	
 	};	
 };
 
 // Collect Videos Script
 const scriptCodeCollect =
-  `(function() {
+   `(function() {
 		//querySelector API to select all links in <video> tag in current page
   		let videos = document.querySelectorAll('video');
 		let srcArray = Array.from(videos).map(function(video) {
