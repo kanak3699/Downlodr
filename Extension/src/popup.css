@@ -1,9 +1,13 @@
 /**
- Description: popup.css file to provide design to the 
- extension file. It aligns all the contents of the extension in the center in the staright
- verical line. Also, provided transition effect to the button and input(type=submit), so that user can distinguish a
+File: popup.html
+Author: 
+Purpose: Group Project (Group 4) for CSCI 3130 (Software Engineeering) Project. 
+Description: This is the stylesheet for popup page. It provides design for the extension. Moreover, It aligns all the contents of the extension in the center in the staright
+ verical line. Also, it provides transition effect to the button and input(type=submit), so that user can distinguish a
  text-box with a submit type input box and button. It also provides textcolors and background colors to the body and the tags.
 */
+
+/* Main Body */
 body *{
     font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
@@ -12,6 +16,13 @@ body *{
     text-align: center;
 }
 
+/* Main Division*/
+#mainDiv{
+    border-radius: 5px;
+    padding: 20px;
+}
+
+/* Submit Button */
 input[type="text"], input[type="submit"], button{ 
     color:white; 
     font-family: 'Times New Roman', Times, serif;
@@ -23,6 +34,7 @@ input[type="text"], input[type="submit"], button{
     cursor: pointer;
 }
 
+/* Submit Button Color */
 button, input[type="submit"]{
     background-color: black;
     border: 2px solid #4CAF50;
@@ -30,32 +42,32 @@ button, input[type="submit"]{
     width: 100px;
 }
 
+/* Submit Button Hover*/
 input[type="submit"]:hover, button:hover{
     background-color: green;
     color: white;
 }
 
+/* Input box, where use types the file name*/
 input[type="text"]{
     margin-top: 4px;
     width: 150px;
 }
 
+/* Format drop-down bar, where use selects the format they want to save as */
 #format{
     border-radius: 5px;
     padding: 3px;
     margin-top: 2px;
 }
 
-#mainDiv{
-    border-radius: 5px;
-    padding: 20px;
-}
-
+/* Video Div */
 #video_div{
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
+/* Text Collect (Paragraph) */
 #textCollect{
     text-align: left;
 }
