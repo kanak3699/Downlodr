@@ -1,0 +1,15 @@
+{
+  "name": "chrome_extension",
+  "version": "1.0.0",
+  "description": "video and audio downloader",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Group 4",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "ytdl-core": "^4.8.2"
+  }
+}

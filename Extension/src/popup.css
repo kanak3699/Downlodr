@@ -1,0 +1,61 @@
+/**
+ Description: popup.css file to provide design to the 
+ extension file. It aligns all the contents of the extension in the center in the staright
+ verical line. Also, provided transition effect to the button and input(type=submit), so that user can distinguish a
+ text-box with a submit type input box and button. It also provides textcolors and background colors to the body and the tags.
+*/
+body *{
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: black;
+    text-align: center;
+}
+
+input[type="text"], input[type="submit"], button{ 
+    color:white; 
+    font-family: 'Times New Roman', Times, serif;
+    border:1px solid; 
+    border-radius: 5px; 
+    text-align: center;
+    padding: 2%;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+button, input[type="submit"]{
+    background-color: black;
+    border: 2px solid #4CAF50;
+    transition-duration: 0.5s;
+    width: 100px;
+}
+
+input[type="submit"]:hover, button:hover{
+    background-color: green;
+    color: white;
+}
+
+input[type="text"]{
+    margin-top: 4px;
+    width: 150px;
+}
+
+#format{
+    border-radius: 5px;
+    padding: 3px;
+    margin-top: 2px;
+}
+
+#mainDiv{
+    border-radius: 5px;
+    padding: 20px;
+}
+
+#video_div{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#textCollect{
+    text-align: left;
+}
