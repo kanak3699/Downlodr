@@ -1,17 +1,14 @@
 
 // This is our server, it is used to download videos from Youtube.
 
-var express = require('express');
-var app = express();
-var ytdl = require('ytdl-core');
+const express = require('express');
+const app = express();
+const ytdl = require('ytdl-core');
+const port = '3000';
 
-// Server listens on http://localhost:4000/
-app.listen('4000', function(){
-	console.log("listening on 4000");
-});
 
 // GET METHOD that downloads videos
-app.get('/download', function(req, res) {
+app.get('/youtube', function(req, res) {
 	var link = req.query.url;
 	var format = req.query.format;
     
@@ -22,3 +19,8 @@ app.get('/download', function(req, res) {
 
 	video.pipe(res);
 });
+
+// Server listens at http://localhost:4000/
+app.listen(port, () => {
+	console.log(`Server listening at http://localhost:${port}`)
+  })
