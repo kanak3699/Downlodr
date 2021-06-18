@@ -6,7 +6,7 @@ Downloadr is a google chrome extension that assists users in downloading videos/
 1. Node Package Manager (For YouTube Content)
 2. Google Chrome Browser
 3. An editor (Such as VSCode)
-git p
+
 ### Setup Extension Manually
 1. Open the Chrome Browser and navigate to chrome://extensions/
 2. Select on Load unpacked button
