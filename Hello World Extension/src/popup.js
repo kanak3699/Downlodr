@@ -65,7 +65,7 @@ window.onload = function() {
 const scriptCodeCollect =
    `(function() {
 		//querySelector API to select all links in <video> tag in current page
-  		let videos = document.querySelectorAll('video');
+  		let videos = document.querySelectorAll('video,audio');
 		let srcArray = Array.from(videos).map(function(video) {
 			return video.currentSrc;
 		});
