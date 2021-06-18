@@ -20,7 +20,7 @@ app.get('/youtube', function(req, res) {
 	video.pipe(res);
 });
 
-// Server listens at http://localhost:4000/
+// Server listens at http://localhost:3000/
 app.listen(port, () => {
 	console.log(`Server listening at http://localhost:${port}`)
   })
