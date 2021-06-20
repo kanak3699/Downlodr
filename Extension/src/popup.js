@@ -16,7 +16,7 @@ window.onload = function() {
 		chrome.storage.local.get('savedVideos', function(result) {
             let text="";
             for(let i=0;i<result.savedVideos.length;i++){
-                text += i+1 + "." + result.savedVideos[i] + "<br>";
+                text += i+1 + ". " + result.savedVideos[i] + "<br>";
             }
             textCollect.innerHTML = text;
 		});
@@ -62,6 +62,7 @@ window.onload = function() {
 };
 
 // Collect Videos Script
+//Source: https://blog.learningdollars.com/2019/12/24/how-to-develop-an-extension-to-download-images-from-google/
 const scriptCodeCollect =
    `(function() {
 		//querySelector API to select all links in <video> tag in current page
