@@ -25,7 +25,9 @@ window.onload = function() {
 	    downloadButton.onclick = function() {
 			chrome.tabs.query({'active': true, 'lastFocusedWindow': true}, function (tabs) {
 				let url = tabs[0].url;
-				let format = document.getElementById('format').value;
+				var format_select = document.getElementById('format');
+				var index = format_select.selectedIndex;
+				let format = format_select[index].value;
                 let fname = document.getElementById('fname').value;
 
 	            //if there is a user input for file name, then the file will be name as it is. Otherwise, it will be named "downloadedVideo"
@@ -52,8 +54,11 @@ window.onload = function() {
 	            // Downloader for other websites
 	            else {
 		            chrome.storage.local.get('savedVideos', function(result) {
-		                message.savedVideos = result.savedVideos;
-		                chrome.runtime.sendMessage(message);
+						//download the video/audio that matches selected format
+						for(let vid of result.savedVideos){
+							if(vid.substr(-4,4)==format || vid.substr(-10,10).includes(format)){
+		                		message.savedVideos = result.savedVideos;
+		                		chrome.runtime.sendMessage(message);}}
 			        });
 		        }
 	        });

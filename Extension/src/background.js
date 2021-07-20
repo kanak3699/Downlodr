@@ -2,7 +2,6 @@ let downloadsArray= [];
 let initialState = {
 	'savedVideos': downloadsArray
 };
-
 // Install a listener of Chrome API
 //Source: https://blog.learningdollars.com/2019/12/24/how-to-develop-an-extension-to-download-images-from-google/,
 //https://blog.learningdollars.com/2020/04/01/how-to-make-a-chrome-extension-to-download-youtube-videos/,
@@ -24,15 +23,18 @@ chrome.runtime.onInstalled.addListener(function() {
 
 // Add a listener
 chrome.runtime.onMessage.addListener(
+	
     function(message, callback) {
 	  // Downloader for other websites
 	  if(message.hasOwnProperty("savedVideos")) {
 		let vidArray = message.savedVideos;
 		for (let vid of vidArray) {
+			//select format for downloading
+			if(vid.substr(-4,4)==message.format || vid.substr(-10,10).includes(message.format)){
 		//chrome download API, creating a repo name and file name for the videos
-		  chrome.downloads.download({url:vid, 
-			filename:"DownlodrExtension/" + message.fname + '.' + message.format});
-		};
+			chrome.downloads.download({url:vid, 
+				filename:"DownlodrExtension/" + message.fname + message.format});
+			}};
 	  }
 	  // Downloader for Youtube
 	  else {
@@ -40,6 +42,6 @@ chrome.runtime.onMessage.addListener(
 		let query = Object.keys(message).map(key => key + '=' + message[key]).join('&');
 		url += query;
 		chrome.downloads.download({url:url,
-			filename: "DownlodrExtension/" + message.fname + '.' + message.format});
+			filename: "DownlodrExtension/" + message.fname + message.format});
 	  }
    });
