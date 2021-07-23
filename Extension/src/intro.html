@@ -3,52 +3,93 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="style.css">
-    <title></title>
+    <title>Introduction</title>
   </head>
   <body>
     <div class="container">
-    <h1 class="heading">Group 4 Of CSCI 3130</h1>
-
-    <div class="profiles">
-      <div class="profile">
-        <img src="peiteng.png" class="profile-img">
-
-        <h3 class="user-name">Peiteng</h3>
-        <h5>JS Developer</h5>
-        <p>Peiteng is also the maintainer of the GIT LAB. He wrote a lot of js codes for extension and download functions</p>
+      <h1 class="heading">Group 4 Of CSCI 3130</h1>
+        
+      <h2>Introduction:</h2>
+      <p>Downloadr is a chrome based extension that helps users to download videos/audios from websites such as youtube. Also it provides users to select the desired format such as .mp3 or .mp4 and various others. Moreover, it also provides users to name the file as per their need and the design of the extension is user friendly which helps the user to use it in an efficient way.</p>
+      
+      <div class="info"> 
+        <div>
+          <h3>Essential Steps:</h3>
+        </div>
+        <div class="articles">
+          <article class="setUp">
+            <h4>Setting up extension on Google Chrome:</h4>
+              <ol type="1">
+                <li>Navigate to "chrome://extensions/" on Google Chrome.</li>
+                <li>Select "Load Unpacked" button on the top left corner of Screen.</li>
+                <li>Navigate through the "src" folder of the file provided</li>
+                <li>Select the file "popup.html" and click enter.</li>
+              </ol>
+            </article>
+            <article class="runOnServer">
+              <h4>Running on server:</h4>
+                <ol type="1">
+                  <li>Navigate to "https://nodejs.org/en/download/" and download the Nodejs file suitable for your operating system.</li>
+                  <li>Open a terminal window on MacOs or Command Prompt on windows and navigate to the src folder.</li>
+                  <li>Run "npm install" command.</li>
+                  <li>Run "node index.js" command to start the server.</li>
+                </ol>
+            </article>
+        
+            <article class="downloadFile">
+              <h4>Steps to downlad a video/audio file:</h4>
+                <ol type="1">
+                  <li>Click on "Collect Videos" to collect the video/audio links which are listed on the webpage and select the desired link.</li>
+                  <li>Enter your desired file name.</li>
+                  <li>Click the download button. Your file will be downloaded under the folder named "DownlodrExtension".</li>
+                  <li>To download video file from Youtube then you need first run the server as specified under "Running on Server".</li>
+                  <li>Then open the browser and type "localhost:"listening port (for eg: 3000)""</li>
+                  <li>Open youtube and then follow the steps 1 to step 3 to download the videos.</li>
+                </ol>
+            </article>
+        </div>
       </div>
-      <div class="profile">
-        <img src="avatar.png" class="profile-img">
+      
+      <div class="profiles">
+        <div class="profile">
+          <img src="peiteng.png" class="profile-img">
 
-        <h3 class="user-name">Khanh Vu</h3>
-        <h5>Backend Developer</h5>
-        <p>Khanh is responsible for server and js codes. He created the server for downloading Youtube videos</p>
+          <h3 class="user-name">Peiteng He</h3>
+          <h5>JS Developer</h5>
+          <p>Peiteng is also the maintainer of the GIT LAB. He wrote a lot of js codes for extension and download functions</p>
+        </div>
+        <div class="profile">
+          <img src="avatar.png" class="profile-img">
+
+          <h3 class="user-name">Khanh Vu</h3>
+          <h5>Backend Developer</h5>
+          <p>Khanh is responsible for server and js codes. He created the server for downloading Youtube videos</p>
+        </div>
+        <div class="profile">
+          <img src="avatar.png" class="profile-img">
+
+          <h3 class="user-name">Kanak Prajapati</h3>
+          <h5>Front-end Developer</h5>
+          <p>Kanak is a great designer and developer. He designed UI and implemented it</p>
+        </div>
       </div>
-      <div class="profile">
-        <img src="avatar.png" class="profile-img">
 
-        <h3 class="user-name">kanak</h3>
-        <h5>Front-end Developer</h5>
-        <p>Kanak is a great designer and developer. He designed UI and implemented it</p>
+      <div class="profiles">
+        <div class="profile">
+          <img src="avatar.png" class="profile-img">
+
+          <h3 class="user-name">Ayush Patel</h3>
+          <h5>Front-end Developer</h5>
+          <p>Ayush is great teammate. He contributed to front-end codes and created animation</p>
+        </div>
+        <div class="profile">
+          <img src="avatar.png" class="profile-img">
+
+          <h3 class="user-name">Shardul Kavale</h3>
+          <h5>Designer</h5>
+          <p>Shardul created our logo and supported teammates</p>
+        </div>
       </div>
     </div>
-
-    <div class="profiles">
-      <div class="profile">
-        <img src="avatar.png" class="profile-img">
-
-        <h3 class="user-name">Ayush</h3>
-        <h5>Front-end Developer</h5>
-        <p>Aysuh is great teammate. He contributed to front-end codes and created animation</p>
-      </div>
-      <div class="profile">
-        <img src="avatar.png" class="profile-img">
-
-        <h3 class="user-name">Shardul</h3>
-        <h5>Designer</h5>
-        <p>Shardul created our logo and supported teammates</p>
-      </div>
-    </div>
-  </div>
   </body>
 </html>
