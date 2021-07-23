@@ -28,7 +28,7 @@ body {
 
 .profiles {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: 20px 80px;
 }
 
@@ -37,8 +37,8 @@ body {
 }
 
 .profile .profile-img {
-  height: 260px;
-  width: 260px;
+  height: 100px;
+  width: 100px;
   border-radius: 10%;
   filter: grayscale(70%);
   cursor: pointer;
@@ -51,7 +51,7 @@ body {
 
 .user-name {
   margin-top: 30px;
-  font-size: 35px;
+  font-size: 25px;
 }
 
 .profile h5 {
@@ -67,8 +67,48 @@ body {
   text-align: justify;
 }
 
+.setUp{
+  flex: 1;
+  width: 100%;
+	float: left;
+  margin: 20px;
+} 
+
+.runOnServer{
+  width: 100%;
+	float: right;
+  flex: 1;
+  margin: 20px;
+}
+
+.downloadFile{
+  width: 100%;
+	float: right;
+  flex: 1;
+  margin: 20px;
+}
+
+.info{
+	color: white;
+	padding: 10px;
+	display: flex;
+	align-items: stretch; 
+	justify-content: space-between; 
+	flex-wrap: wrap;
+	flex-direction: row;
+}
+
+.info h2{
+  padding: 10px;
+}
+
+.articles{
+  padding-top: 10px;
+  display: flex;
+}
+
 @media only screen and (max-width: 1150px) {
-  .profiles {
+  .profiles, .articles {
     flex-direction: column;
   }
 
@@ -81,7 +121,7 @@ body {
   .profile p {
     text-align: center;
     margin: 20px 60px 80px 60px;
-    font-size: 20px;
+    font-size: 15px;
   }
 }
 
